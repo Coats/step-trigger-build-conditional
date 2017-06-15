@@ -6,7 +6,7 @@ WBTC_MESSAGE=$(git log -1 --pretty=%s)
 
 WBTC_TRIGGER=false
 
-if [ -n "$WERCKER_TRIGGER_BUILD_CONDITIONAL_GIT_PATH" ] && [ $(git show $WERCKER_TRIGGER_BUILD_CONDITIONAL_GIT_PATH | wc -c) -ne 0 ]; then
+if [ -n "$WERCKER_TRIGGER_BUILD_CONDITIONAL_GIT_PATH" ] && [ "$(git show $WERCKER_TRIGGER_BUILD_CONDITIONAL_GIT_PATH | wc -c)" -ne 0 ]; then
   echo "Changed detected on path $WERCKER_TRIGGER_BUILD_CONDITIONAL_GIT_PATH."
   WBTC_TRIGGER=true
 fi
