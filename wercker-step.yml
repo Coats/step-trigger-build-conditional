@@ -1,6 +1,6 @@
 name: trigger-build-conditional
 version: 0.1.0
-description: Trigger another build pipeline if git message contains specific keywords or git folder has changes.
+description: Trigger another build pipeline if git message contains specific keywords or git path has changes.
 keywords:
   - build
   - trigger
@@ -8,7 +8,7 @@ keywords:
   - git message
   - git folder
 properties:
-  git-folder:
+  git-path:
     type: string
     required: false
   git-folder:
