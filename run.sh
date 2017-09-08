@@ -26,7 +26,7 @@ if [ "$WBTC_TRIGGER" = "true" ]; then
   echo "$WBTC_JSON"
   info "Calling $WBTC_ENDPOINT"
 
-  if ! curl --fail -k --write-out "\n\nStatus code: %{http_code}\n" -H "Content-type: application/json" -H "Authorization: Bearer $WERCKER_TRIGGER_BUILD_CONDITIONAL_TOKEN" "$WTBC_ENDPOINT" -d "$WTBC_JSON"; then
+  if ! curl --fail -k --write-out "\n\nStatus code: %{http_code}\n" -H "Content-type: application/json" -H "Authorization: Bearer $WERCKER_TRIGGER_BUILD_CONDITIONAL_TOKEN" "$WBTC_ENDPOINT" -d "$WBTC_JSON"; then
     fail "$WBTC_TRIGGER_RESPONSE"
   fi
 
