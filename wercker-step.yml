@@ -1,5 +1,5 @@
 name: trigger-build-conditional
-version: 0.1.4
+version: 0.1.5
 description: Trigger another build pipeline if git message contains specific keywords or git path has changes.
 keywords:
   - build
