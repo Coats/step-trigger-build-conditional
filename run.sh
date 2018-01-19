@@ -9,7 +9,7 @@ if [ -n "$WERCKER_TRIGGER_BUILD_CONDITIONAL_GIT_PATH" ] && [ "$(git show "$WERCK
   WBTC_TRIGGER=true
 fi
 
-if [ -n "$WERCKER_TRIGGER_BUILD_CONDITIONAL_GIT_PATH" ] && [ "$(git show -m  | grep "$WERCKER_TRIGGER_BUILD_CONDITIONAL_GIT_PATH" | wc -c)" -ne 0 ]; then
+if [ -n "$WERCKER_TRIGGER_BUILD_CONDITIONAL_GIT_PATH" ] && [ "$(git show -m  | grep -c "$WERCKER_TRIGGER_BUILD_CONDITIONAL_GIT_PATH")" -ne 0 ]; then
   info "Changed detected on path with grep $WERCKER_TRIGGER_BUILD_CONDITIONAL_GIT_PATH."
   WBTC_TRIGGER=true
 fi
