@@ -3,6 +3,12 @@
 WBTC_MESSAGE=$(git log -1 --pretty=%s)
 
 WBTC_TRIGGER=false
+echo " - Build Path 1 - "
+echo [ -n "$WERCKER_TRIGGER_BUILD_CONDITIONAL_GIT_PATH" ]
+echo " - Build Path 2 - "
+echo [ "$(git show "$WERCKER_TRIGGER_BUILD_CONDITIONAL_GIT_PATH" | wc -c)" -ne 0 ]
+echo " - Build Path 3 - "
+echo [ "$(git show -m  | grep -c "$WERCKER_TRIGGER_BUILD_CONDITIONAL_GIT_PATH")" -ne 0 ]
 
 if [ -n "$WERCKER_TRIGGER_BUILD_CONDITIONAL_GIT_PATH" ] && [ "$(git show "$WERCKER_TRIGGER_BUILD_CONDITIONAL_GIT_PATH" | wc -c)" -ne 0 ]; then
   info "Changed detected on path $WERCKER_TRIGGER_BUILD_CONDITIONAL_GIT_PATH."
